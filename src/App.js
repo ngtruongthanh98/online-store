@@ -1,22 +1,40 @@
-import "./App.css";
-import { Component } from "react";
-import Header from "./components/Header";
+import React, { PureComponent } from "react";
 import Product from "./components/Product";
-
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
-      <div>
-        <Header />
-        <div className="row">
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <Product/>
+      <React.Fragment>
+        <nav className="navbar navbar-inverse">
+          <div className="container-fluid">
+            <a className="navbar-brand">Props</a>
           </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <Product/>
+        </nav>
+
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <Product
+                name="Iphone 12 Pro Max 256GB"
+                price="999 USD"
+                altImg="Iphone 12 Pro Max 256GB"
+                srcImg="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-200x200.jpg"
+              />
+              <Product
+                name="Iphone 12 Pro Max 128GB"
+                price="999 USD"
+                altImg="Iphone 12 Pro Max 128GB"
+                srcImg="https://24hstore.vn/images/products/2020/10/14/large/iphone-12-pro-max-blue.jpg"
+              />
+              <Product
+                name="AirPods Pro"
+                price="299 USD"
+                altImg="AirPods Pro"
+                srcImg="https://bizweb.dktcdn.net/100/324/157/products/3-94574bf8-44a3-40d8-87e2-2981053c4660.jpg?v=1602840587000"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
