@@ -1,8 +1,17 @@
 import React, { PureComponent } from "react";
 import Product from "./components/Product";
 class App extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.btnRef= React.createRef();
+  }
+  
   onClick() {
-    console.log("Here is app component")
+    console.log("Here is app component");
+  }
+
+  onAddProduct = () => {
+    console.log(this.btnRef.current.value);
   }
 
   render() {
@@ -62,11 +71,32 @@ class App extends PureComponent {
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div className="panel panel-danger">
+                <div className="panel-heading">
+                  <h3 className="panel-title">Add product</h3>
+                </div>
+                <div className="panel-body">
+                  <div className="form-group">
+                    <label>Product Name</label>
+                    <input type="text" className="form-control" ref={this.btnRef}/>
+                  </div>
+                  <button type="submit" className="btn btn-primary" onClick={this.onAddProduct}>
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {elements}
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <button type="button" className="btn btn-warning" onClick={ this.onClick}>
+              <button
+                type="button"
+                className="btn btn-warning"
+                onClick={this.onClick}
+              >
                 Click Me!
               </button>
             </div>
