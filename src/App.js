@@ -1,6 +1,10 @@
 import React, { PureComponent } from "react";
 import Product from "./components/Product";
 class App extends PureComponent {
+  onClick() {
+    console.log("Here is app component")
+  }
+
   render() {
     var products = [
       {
@@ -51,7 +55,7 @@ class App extends PureComponent {
       <React.Fragment>
         <nav className="navbar navbar-inverse">
           <div className="container-fluid">
-            <a className="navbar-brand">Props</a>
+            <a className="navbar-brand">Online Store</a>
           </div>
         </nav>
 
@@ -59,6 +63,12 @@ class App extends PureComponent {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {elements}
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <button type="button" className="btn btn-warning" onClick={ this.onClick}>
+                Click Me!
+              </button>
             </div>
           </div>
         </div>
