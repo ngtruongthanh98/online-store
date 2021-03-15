@@ -10,7 +10,7 @@ class Product extends PureComponent {
                   <img src={this.props.srcImg} alt={this.props.altImg}/>
                   <div className="caption">
                     <h3>
-                      {this.props.name}
+                      {this.props.children}
                     </h3>
                     <p>
                       {this.props.price}
