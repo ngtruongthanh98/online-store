@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import Product from "./components/Product";
+import ButtonBuy from "./components/ButtonBuy"
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -37,13 +38,6 @@ class App extends PureComponent {
     };
   }
 
-  //////////////////////////////////////////////
-  onAddToCart = (id) => {
-    alert(this.state.products[id].name);
-    // console.log(this.state.products.name)
-    console.log(id)
-  };
-
   render() {
     let elements = this.state.products.map((product, index) => {
       let result = "";
@@ -53,18 +47,13 @@ class App extends PureComponent {
             <td>{product.id}</td>
             <td>{product.name}</td>
             <td>
-              <Product                
-                altImg={product.altImg}
-                srcImg={product.srcImg}
-              />
+              <Product altImg={product.altImg} srcImg={product.srcImg} name={product.name}/>
             </td>
             <td>
               <span className="label label-success">{product.price}</span>
             </td>
             <td>
-              <a className="btn btn-primary" onClick={this.onAddToCart(index)}>
-                Buy Now
-              </a>
+              <ButtonBuy name={product.name}/>
             </td>
           </tr>
         );

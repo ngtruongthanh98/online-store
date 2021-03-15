@@ -10,6 +10,10 @@ class Product extends PureComponent {
   //   alert(this.props.children + '___' + this.props.price);
   // }
 
+  // onClickImage = () => {
+  //   alert(this.props.name)
+  // }
+
   render() {
     return (
       <div>
@@ -17,6 +21,9 @@ class Product extends PureComponent {
           <div className="thumbnail">
             <img src={this.props.srcImg} alt={this.props.altImg} />
           </div>
+          
+          {/* <button type="button" class="btn btn-success" onClick={this.onClickImage}>Buy Now</button> */}
+          
         </div>
       </div>
     );
