@@ -60,7 +60,6 @@ class App extends PureComponent {
       let result = "";
       if (product.status) {
         result = (
-          <div class="row">
             <div className="col-sm-6 col-md-4">
               <div className="thumbnail">
                 <img src={product.srcImg} alt={product.altImg} />
@@ -73,7 +72,6 @@ class App extends PureComponent {
                 </div>
               </div>
             </div>
-          </div>
         );
       }
       return result;
@@ -87,11 +85,11 @@ class App extends PureComponent {
           </div>
         </nav>
 
-        <div className="container">
-          <div className="row">
-            <div className="row">{elements}</div>
-          </div>
-        </div>
+        <div className="container">{elements}</div>
+
+        <div className="container">{elements}</div>
+
+
       </React.Fragment>
     );
   }
