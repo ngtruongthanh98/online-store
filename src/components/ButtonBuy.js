@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 
 class ButtonBuy extends PureComponent {
   onClickImage = () => {
-    alert(this.props.name);
+    alert(this.props.name +"\n\n" + this.props.price);
   };
 
   render() {

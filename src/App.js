@@ -53,7 +53,7 @@ class App extends PureComponent {
               <span className="label label-success">{product.price}</span>
             </td>
             <td>
-              <ButtonBuy name={product.name}/>
+              <ButtonBuy name={product.name} price={product.price}/>
             </td>
           </tr>
         );
