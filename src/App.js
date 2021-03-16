@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import ButtonBuy from "./components/ButtonBuy";
+import Form from "./components/Form"
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -60,7 +61,7 @@ class App extends PureComponent {
       let result = "";
       if (product.status) {
         result = (
-            <div className="col-sm-6 col-md-4">
+            <div key={index} className="col-sm-6 col-md-4">
               <div className="thumbnail">
                 <img src={product.srcImg} alt={product.altImg} />
                 <div className="caption">
@@ -84,6 +85,12 @@ class App extends PureComponent {
             <a className="navbar-brand">Online Store</a>
           </div>
         </nav>
+
+        
+        <div className="container">
+          <Form/>
+        </div>
+        
 
         <div className="container">{elements}</div>
 
