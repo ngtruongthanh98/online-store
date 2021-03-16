@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
-import Product from "./components/Product";
-import ButtonBuy from "./components/ButtonBuy"
+import ButtonBuy from "./components/ButtonBuy";
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -33,6 +32,24 @@ class App extends PureComponent {
             "https://bizweb.dktcdn.net/100/324/157/products/3-94574bf8-44a3-40d8-87e2-2981053c4660.jpg?v=1602840587000",
           status: true,
         },
+        {
+          id: 4,
+          name: "iPad Air",
+          price: "1999 USD",
+          altImg: "iPad Air",
+          srcImg:
+            "https://macbookgiasi.vn/wp-content/uploads/2020/07/ipad-air-3-2020-macbookgiasi1.jpg",
+          status: true,
+        },
+        {
+          id: 5,
+          name: "Apple Watch Series 6",
+          price: "299 USD",
+          altImg: "Apple Watch Series 6",
+          srcImg:
+            "https://24hstore.vn/images/products/2020/09/16/large/apple-watch-series-6-black.jpg",
+          status: true,
+        },
       ],
       isActive: true,
     };
@@ -43,19 +60,20 @@ class App extends PureComponent {
       let result = "";
       if (product.status) {
         result = (
-          <tr key={product.id}>
-            <td>{product.id}</td>
-            <td>{product.name}</td>
-            <td>
-              <Product altImg={product.altImg} srcImg={product.srcImg} name={product.name}/>
-            </td>
-            <td>
-              <span className="label label-success">{product.price}</span>
-            </td>
-            <td>
-              <ButtonBuy name={product.name} price={product.price}/>
-            </td>
-          </tr>
+          <div class="row">
+            <div className="col-sm-6 col-md-4">
+              <div className="thumbnail">
+                <img src={product.srcImg} alt={product.altImg} />
+                <div className="caption">
+                  <h3>{product.name}</h3>
+                  <p>{product.price}</p>
+                  <p>
+                    <ButtonBuy name={product.name} price={product.price} />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         );
       }
       return result;
@@ -71,20 +89,7 @@ class App extends PureComponent {
 
         <div className="container">
           <div className="row">
-            <div className="row">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>{elements}</tbody>
-              </table>
-            </div>
+            <div className="row">{elements}</div>
           </div>
         </div>
       </React.Fragment>
