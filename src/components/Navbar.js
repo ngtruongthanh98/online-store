@@ -5,7 +5,9 @@ class Navbar extends PureComponent {
         return (
             <nav className="navbar navbar-inverse">
                 <div className="container-fluid">
-                    <Link to="/" className="navbar-brand">Online Store</Link>
+                    <Link to="/" className="navbar-brand">
+                        Online Store
+                    </Link>
 
                     <ul className="nav navbar-nav narvar-right">
                         <li>
@@ -16,10 +18,7 @@ class Navbar extends PureComponent {
                         </li>
                     </ul>
                 </div>
-
-                
             </nav>
-
         );
     }
 }

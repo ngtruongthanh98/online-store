@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
-import ButtonBuy from "./ButtonBuy"
+import ButtonBuy from "./ButtonBuy";
+import Message from "./Message";
 class Home extends PureComponent {
     constructor(props) {
         super(props);
@@ -80,7 +81,14 @@ class Home extends PureComponent {
             return result;
         });
 
-        return <div className="container">{elements}</div>;
+        return (
+            <React.Fragment>
+                <div className="container">
+                    <Message />
+                </div>
+                <div className="container">{elements}</div>
+            </React.Fragment>
+        );
     }
 }
 
