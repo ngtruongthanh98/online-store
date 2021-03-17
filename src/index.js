@@ -4,9 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
-import appReducers from "../src/components/reducers/index";
+import appReducers from "./reducers/index";
 import { Provider } from "react-redux";
-
+ 
 const store = createStore(appReducers);
 
 ReactDOM.render(
