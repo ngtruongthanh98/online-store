@@ -6,7 +6,7 @@ class Cart extends PureComponent {
             <div>
                 
                 <div class="input-group">
-                    Hello
+                    Cart
                 </div>
                 
             </div>
